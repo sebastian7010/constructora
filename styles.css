@@ -1,0 +1,497 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #000;
+  --accent-color: #dc143c;
+  --light-bg: #ffffff;
+  --dark-text: #000;
+  --light-text: #666;
+  --border-color: #f0f0f0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
+  background-color: var(--light-bg);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--light-bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.company-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark-text);
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: var(--light-text);
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #b91130;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(220, 20, 60, 0.3);
+}
+
+/* Servicios Section */
+.servicios {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.servicios h2,
+.empresas h2,
+.proyectos h2,
+.contacto h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.servicio-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.servicio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(220, 20, 60, 0.2);
+}
+
+.servicio-icon {
+  height: 60px;
+  width: 60px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.servicio-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.servicio-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.servicio-card p {
+  color: var(--light-text);
+  font-size: 14px;
+}
+
+/* Empresas Section */
+.empresas {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.empresas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+}
+
+.empresa-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.empresa-card:hover {
+  border-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.empresa-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.empresa-card h4 {
+  font-size: 14px;
+  color: var(--dark-text);
+}
+
+/* Proyectos Section */
+.proyectos {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.proyecto-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(220, 20, 60, 0.2);
+}
+
+.proyecto-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.proyecto-info {
+  padding: 20px;
+}
+
+.proyecto-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.proyecto-info p {
+  color: var(--light-text);
+  font-size: 14px;
+}
+
+/* Contacto Section */
+.contacto {
+  padding: 80px 0;
+  text-align: center;
+  background-color: white;
+}
+
+.contacto p {
+  font-size: 18px;
+  color: var(--light-text);
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 50px 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+/* Los iconos ahora se ven sin filtro ya que son transparentes */
+.social-link img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  filter: none;
+}
+
+.social-link:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.15);
+}
+
+/* WhatsApp Botón Flotante */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 99;
+  box-shadow: none;
+  transition: all 0.3s;
+  animation: pulsate 2s infinite;
+}
+
+/* Hacer que el icono sea visible sin filtro ni fondo */
+.whatsapp-btn img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  filter: none;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  animation: none;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .servicios h2,
+  .empresas h2,
+  .proyectos h2,
+  .contacto h2 {
+    font-size: 28px;
+  }
+
+  .empresas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-btn img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-section {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .company-name {
+    font-size: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .servicios-grid,
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .empresas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
